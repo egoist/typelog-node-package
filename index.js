@@ -1,11 +1,11 @@
 var chalk = require('chalk')
 var emoji = require('node-emoji')
 
-var typeList = ['info', 'error', 'warn', 'success']
+var typeList = ['normal', 'info', 'error', 'warn', 'success']
 
 function log () {
   var args = Array.prototype.slice.call(arguments)
-  var type = 'info'
+  var type = 'normal'
   var content = args
   if (typeList.join('').indexOf(args[0]) > -1) {
     type = args[0]
@@ -15,8 +15,8 @@ function log () {
     }
   }
   content = content.join(' ')
-  var color = 'cyan'
-  var prefix = emoji.get(':wave:') + '  [Info]'
+  var color = 'white'
+  var prefix = emoji.get(':point_right:')
   switch (type) {
     case 'error':
       color = 'red'
@@ -26,9 +26,9 @@ function log () {
       color = 'yellow'
       prefix = emoji.get(':warning:') + '  [Warning]'
       break;
-    case 'normal':
-      color = 'white'
-      prefix = emoji.get(':point_right:') + '  [Well]'
+    case 'info':
+      color = 'cyan'
+      prefix = emoji.get(':wave:') + '  [Info]'
       break;
     case 'success':
       color = 'green'

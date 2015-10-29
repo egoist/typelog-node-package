@@ -21,7 +21,10 @@ log.warn('Please do not hate me')
 log.success('You finally got that girlfriend')
 
 // alternatives
-log('info', 'write type inside function')
+log('info', 'write type inside function', 'is ok', 'too')
+
+// do not show type, it's ugly
+log('only content and a lovely emoji')
 ```
 
 ## License
