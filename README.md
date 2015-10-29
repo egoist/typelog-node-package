@@ -13,7 +13,7 @@ Imagine logging everything in your console with a type.
 For `node >= 4.0.0`
 
 ```javascript
-const log = require('log')
+const log = require('typelog')
 
 log.info('I\'m some information', 'hah?')
 log.error('You did something that wrong')
