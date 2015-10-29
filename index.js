@@ -16,28 +16,29 @@ function log () {
   }
   content = content.join(' ')
   var color = 'white'
-  var prefix = emoji.get(':point_right:')
+  var prefix = getEmoji(type)
   switch (type) {
     case 'error':
       color = 'red'
-      prefix = emoji.get(':red_circle:') + '  [Error]'
+      prefix = '[Error]  '
       break;
     case 'warn':
       color = 'yellow'
-      prefix = emoji.get(':warning:') + '  [Warning]'
+      prefix = '[Warning]  '
       break;
     case 'info':
       color = 'cyan'
-      prefix = emoji.get(':wave:') + '  [Info]'
+      prefix = '[Info]  '
       break;
     case 'success':
       color = 'green'
-      prefix = emoji.get(':+1:') + '  [Success]'
+      prefix = '[Success]  '
       break
     default:
       break;
   }
-  console.log(chalk[color](prefix), '',content)
+  prefix = getEmoji(type) + prefix
+  console.log(chalk[color](prefix) + content)
   return {
     type: type,
     content: content
@@ -58,6 +59,18 @@ log.warn = function () {
 
 log.success = function () {
   return log.call(this, 'success', arguments)
+}
+
+function getEmoji (type) {
+  var emojis = {
+    'info': ':wave:',
+    'warn': ':warning:',
+    'success': ':+1:',
+    'normal': ':point_right:',
+    'error': ':red_circle:'
+  }
+  return (process.platform === 'win32' ? '' : emoji.get(emojis[type]))
+  + (process.platform === 'win32' ? '' : '  ')
 }
 
 module.exports = log
