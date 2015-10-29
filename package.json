@@ -1,0 +1,22 @@
+{
+  "name": "typelog",
+  "version": "0.0.1",
+  "description": "console.log with types",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require should test.js"
+  },
+  "author": "EGOIST",
+  "license": "MIT",
+  "engine": {
+    "node": ">= 4.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "should": "^7.1.1"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "node-emoji": "^1.0.4"
+  }
+}
