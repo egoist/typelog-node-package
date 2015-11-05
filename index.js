@@ -16,7 +16,7 @@ function log () {
   }
   content = content.join(' ')
   var color = 'white'
-  var prefix = getEmoji(type)
+  var prefix = ''
   switch (type) {
     case 'error':
       color = 'red'
@@ -69,8 +69,18 @@ function getEmoji (type) {
     'normal': ':point_right:',
     'error': ':red_circle:'
   }
-  return (process.platform === 'win32' ? '' : emoji.get(emojis[type]))
-  + (process.platform === 'win32' ? '' : '  ')
+  var chars = {
+    'info': 'i',
+    'warn': '‼',
+    'success': '√',
+    'normal': '',
+    'error': '×'
+  }
+  var append = process.platform === 'win32' ? ' ' : '  '
+  if (type === 'normal') {
+    append = ''
+  }
+  return (process.platform === 'win32' ? chars[type] : emoji.get(emojis[type])) + append
 }
 
 module.exports = log

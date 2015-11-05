@@ -3,7 +3,7 @@ var log = require('./')
 register('deploy', ['git', 'publish'])
 
 register('log', () => {
-  log.info('I\'m some information')
+  log.info('I\'m some information√')
   log.error('You did something that wrong')
   log.warn('Please do not hate me')
   log.success('You finally got that girlfriend')
