@@ -1,6 +1,6 @@
 {
   "name": "typelog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "console.log with types",
   "main": "index.js",
   "scripts": {

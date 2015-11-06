@@ -78,7 +78,7 @@ function getEmoji (type) {
   }
   var append = process.platform === 'win32' ? ' ' : '  '
   if (type === 'normal') {
-    append = ''
+    append = process.platform === 'win32' ? '' : '  '
   }
   return (process.platform === 'win32' ? chars[type] : emoji.get(emojis[type])) + append
 }
