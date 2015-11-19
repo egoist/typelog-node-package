@@ -20,24 +20,24 @@ function log () {
   switch (type) {
     case 'error':
       color = 'red'
-      prefix = '[Error]  '
+      prefix = '[ERR] '
       break;
     case 'warn':
       color = 'yellow'
-      prefix = '[Warning]  '
+      prefix = '[WARN] '
       break;
     case 'info':
       color = 'cyan'
-      prefix = '[Info]  '
+      prefix = '[INFO] '
       break;
     case 'success':
       color = 'green'
-      prefix = '[Success]  '
+      prefix = '[OK] '
       break
     default:
       break;
   }
-  prefix = getEmoji(type) + prefix
+  prefix = (args[2] === 'text' ? '' : getEmoji(type)) + prefix
   console.log(chalk[color](prefix) + content)
   return {
     type: type,
@@ -59,6 +59,15 @@ log.warn = function () {
 
 log.success = function () {
   return log.call(this, 'success', arguments)
+}
+
+log.text = function () {
+  var args = Array.prototype.slice.call(arguments)
+  if (args.length === 1) {
+    args.unshift('info')
+  }
+  var type = args[0]
+  return log.call(this, type, arguments, 'text')
 }
 
 function getEmoji (type) {

@@ -9,6 +9,7 @@ register('log', () => {
   log.success('You finally got that girlfriend')
   log('info', 'write type inside function', 'is ok', 'too')
   log('only content and a lovely emoji')
+  log.text('only text and type')
 })
 
 register('git', () => {
