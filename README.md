@@ -20,6 +20,9 @@ log.error('You did something that wrong')
 log.warn('Please do not hate me')
 log.success('You finally got that girlfriend')
 
+// do not show emoji, it is always not fancy
+log.text('only content and type')
+
 // alternatives
 log('info', 'write type inside function', 'is ok', 'too')
 
