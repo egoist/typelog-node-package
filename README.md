@@ -10,8 +10,6 @@ Imagine logging everything in your console with a type.
 
 ## Usage
 
-For `node >= 4.0.0`
-
 ```javascript
 const log = require('typelog')
 
@@ -30,4 +28,4 @@ log.heading('heading')
 
 ## License
 
-MIT.
+MIT &copy; [EGOIST](https://github.com/egoist).
