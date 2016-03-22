@@ -6,7 +6,7 @@
 
 Imagine logging everything in your console with a type.
 
-![preview](http://ww4.sinaimg.cn/large/a15b4afegw1exi2ljyh8kj20gd0aagn2.jpg)
+![preview](https://ooo.0o0.ooo/2016/03/21/56f0c0988384a.png)
 
 ## Usage
 
@@ -15,19 +15,17 @@ For `node >= 4.0.0`
 ```javascript
 const log = require('typelog')
 
+// exitCode: 0
 log.info('I\'m some information', 'hah?')
-log.error('You did something that wrong')
 log.warn('Please do not hate me')
 log.success('You finally got that girlfriend')
 
-// do not show emoji, it is always not fancy
-log.text('only content and type')
+// exitCode: 1
+log.error('You did something that wrong')
 
-// alternatives
-log('info', 'write type inside function', 'is ok', 'too')
-
-// do not show type, it's ugly
-log('only content and a lovely emoji')
+// heading title
+log.heading('heading')
+//=> ❯❯❯❯❯ heading
 ```
 
 ## License
